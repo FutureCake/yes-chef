@@ -8,20 +8,20 @@ import { OnboardingStackParamList } from "../../helpers/types";
 
 type OnboardingStack = NativeStackNavigationProp<OnboardingStackParamList>;
 
-export default function Otp() {
+export default function Email() {
 
     const nav = useNavigation<OnboardingStack>();
-    const [otp, setOtp] = useState<string | undefined>();
+    const [email, setEmail] = useState<string | undefined>();
 
     const next = () => {
-        if (!otp) return;
+        if (!email) return;
 
-        nav.navigate("Welcome", { userType: "individual" });
+        nav.navigate("Otp", { email: email });
     }
 
     return (
-        <OnboardingStep header={"Nearly done"} message={"Paste the code from your email\nand you’re good to go"}>
-            <TextInput style={styles.input} placeholder="your 6 digits" value={otp} onChangeText={setOtp} keyboardType="number-pad" />
+        <OnboardingStep header={"Email address"} message={"Please enlighten me with\nyour email so we can progress"}>
+            <TextInput style={styles.input} placeholder="Your email@domain.com" value={email} onChangeText={setEmail} />
             <Button onPress={next} style={[styles.button, styles.buttonThick]} textStyle={{ fontSize: 20, color: "#fff" }} title="Next" />
         </OnboardingStep>
     );
