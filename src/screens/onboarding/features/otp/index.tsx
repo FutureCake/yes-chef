@@ -4,19 +4,20 @@ import { useState } from "react";
 import { StyleSheet, TextInput } from "react-native";
 import Button from "../../../../shared/components/buttons";
 import OnboardingStep from "../../components/onboarding-step";
+import { useOnboardingStore } from "../../onboarding-store";
 import { OnboardingStackParamList } from "../../types";
 
 type OnboardingStack = NativeStackNavigationProp<OnboardingStackParamList>;
 
 export default function Otp() {
 
+    const userType = useOnboardingStore(s => s.userType);
     const nav = useNavigation<OnboardingStack>();
     const [otp, setOtp] = useState<string | undefined>();
 
     const next = () => {
         if (!otp) return;
-
-        nav.navigate("Welcome", { userType: "individual" });
+        nav.navigate("Welcome", { userType: userType });
     }
 
     return (
