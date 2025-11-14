@@ -1,16 +1,16 @@
-import SecureStore from 'expo-secure-store';
+import * as SecureStore from 'expo-secure-store';
 
 const SECURE_KEY = 'auth-tokens';
 
-export async function getAuthenticationTokens(): Promise<{ access: string, refresh: string } | undefined> {
+export async function getAuthenticationTokens(): Promise<{ access: string, refresh: string } | null> {
 
     const tokensString = await SecureStore.getItemAsync(SECURE_KEY);
 
-    if (tokensString) {
+    if (tokensString !== null) {
         return JSON.parse(tokensString);
     }
 
-    return undefined;
+    return tokensString;
 }
 
 export async function setAuthenticationTokens(access: string, refresh: string): Promise<void> {
