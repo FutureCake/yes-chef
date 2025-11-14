@@ -6,9 +6,11 @@ import OnboardingStep from "../../components/onboarding-step";
 import { OnboardingStackParamList } from "../../helpers/types";
 
 type RootStackNavProp = NativeStackNavigationProp<OnboardingStackParamList>;
+// type Props = NativeStackScreenProps<OnboardingStackParamList, "Authentication">
 
 export default function Authentication() {
 
+    // const { route } = props;
     const nav = useNavigation<RootStackNavProp>();
 
     const handleGoogleContinue = () => {
@@ -23,7 +25,7 @@ export default function Authentication() {
         <OnboardingStep header={"Welcome"} message={"Access your account in less\nthan onion is sautéed"}>
             <Button onPress={handleGoogleContinue} style={[styles.button, styles.buttonThick]} textStyle={{ fontSize: 20, color: "#fff" }} title="Continue with Google" />
             <Button onPress={handleEmailContinue} style={[styles.button, styles.buttonSkinny]} textStyle={{ fontSize: 20 }} title="Or use your email instead" />
-            <Button onPress={handleEmailContinue} style={[styles.button, styles.buttonSkinny]} textStyle={{ fontSize: 20 }} title="I already have an account" />
+            {/* {route.params.origin === "<Button onPress={handleEmailContinue} style={[styles.button, styles.buttonSkinny]} textStyle={{ fontSize: 20 }} title="I already have an account" /> */}
         </OnboardingStep>
     );
 }

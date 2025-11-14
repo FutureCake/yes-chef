@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator<OnboardingStackParamList>();
 export default function Onboarding() {
 
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Email">
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Hello">
             <Stack.Screen name="Hello" component={Hello} />
             <Stack.Screen name="Authentication" component={Authentication} />
             <Stack.Screen name="Email" component={Email} />
