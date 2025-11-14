@@ -1,8 +1,10 @@
 import { ParamListBase } from "@react-navigation/native";
 
+export type UserType = "individual" | "business";
+
 export interface OnboardingStackParamList extends ParamListBase {
-    Welcome: undefined;
-    SignUp: undefined;
-    Login: undefined;
-    ForgotPassword: undefined;
+    Hello: undefined;
+    Otp: undefined;
+    CustomerType: undefined;
+    Welcome: { userType: UserType };
 }
