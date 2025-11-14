@@ -1,8 +1,13 @@
-import { View } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { OnboardingStackParamList } from "./helpers/types";
 
-function Onboarding() {
+const Stack = createNativeStackNavigator<OnboardingStackParamList>();
+
+export default function Onboarding() {
 
     return (
-        <View></View>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        </Stack.Navigator>
     );
 }
