@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
+import { KeyboardAvoidingView } from "react-native-keyboard-controller";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export interface OnboardingStepProps extends PropsWithChildren {
@@ -12,15 +13,19 @@ export default function OnboardingStep(props: OnboardingStepProps) {
     const { header, message, children } = props;
 
     return (
-        <SafeAreaView edges={["top", "bottom"]} style={styles.container}>
-            <View style={styles.texts}>
-                <Text style={styles.header}>{header}</Text>
-                <Text style={styles.message}>{message}</Text>
-            </View>
-            <View style={styles.actions}>
-                {children}
-            </View>
-        </SafeAreaView>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
+                <SafeAreaView edges={["top", "bottom"]} >
+                    <View style={styles.texts}>
+                        <Text style={styles.header}>{header}</Text>
+                        <Text style={styles.message}>{message}</Text>
+                    </View>
+                    <View style={styles.actions}>
+                        {children}
+                    </View>
+                </SafeAreaView>
+            </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
     )
 }
 
