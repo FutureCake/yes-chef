@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { StyleSheet } from "react-native";
-import Button from "../../../../shared/components/buttons";
+import { LightButton, StrongButton } from "../../../../shared/components/buttons/variants";
 import OnboardingStep from "../../components/onboarding-step";
 import { OnboardingStackParamList } from "../../types";
 
@@ -23,27 +22,8 @@ export default function Authentication() {
 
     return (
         <OnboardingStep header={"Welcome"} message={"Access your account in less\nthan onion is sautéed"}>
-            <Button onPress={handleGoogleContinue} style={[styles.button, styles.buttonThick]} textStyle={{ fontSize: 20, color: "#fff" }} title="Continue with Google" />
-            <Button onPress={handleEmailContinue} style={[styles.button, styles.buttonSkinny]} textStyle={{ fontSize: 20 }} title="Or use your email instead" />
-            {/* {route.params.origin === "<Button onPress={handleEmailContinue} style={[styles.button, styles.buttonSkinny]} textStyle={{ fontSize: 20 }} title="I already have an account" /> */}
+            <StrongButton title={"Continue with Google"} onPress={handleGoogleContinue} />
+            <LightButton title="Or use your email instead" onPress={handleEmailContinue} />
         </OnboardingStep>
     );
 }
-
-const styles = StyleSheet.create({
-    button: {
-        fontFamily: "comic-sans-regular",
-        borderRadius: 8,
-        paddingVertical: 16,
-        alignItems: "center"
-    },
-    buttonThick: {
-        color: "#fff",
-        backgroundColor: "#616161"
-
-    },
-    buttonSkinny: {
-        borderColor: "#3D3935",
-        borderWidth: 1,
-    }
-});

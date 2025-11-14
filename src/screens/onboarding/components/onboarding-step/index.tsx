@@ -39,10 +39,12 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 36,
-        marginBottom: 14
+        marginBottom: 14,
+        fontFamily: "comic-sans-bold"
     },
     message: {
         fontSize: 20,
+        fontFamily: "comic-sans"
     },
     actions: {
         gap: 12

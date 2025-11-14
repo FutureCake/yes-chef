@@ -1,8 +1,9 @@
-import { Pressable, PressableProps, StyleProp, Text, TextStyle } from "react-native";
+import { Pressable, PressableProps, StyleProp, Text, TextStyle, ViewStyle } from "react-native";
 
-export interface ButtonProps extends PressableProps {
+export interface ButtonProps extends Omit<PressableProps, "style"> {
     title: string;
-    textStyle?: StyleProp<TextStyle>
+    style?: StyleProp<ViewStyle>;
+    textStyle?: StyleProp<TextStyle>;
 }
 
 export default function Button(props: ButtonProps) {

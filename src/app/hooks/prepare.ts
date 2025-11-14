@@ -17,7 +17,7 @@ export default function usePrepare() {
                 await SplashScreen.preventAutoHideAsync();
 
                 await loadAsync({
-                    'comic-sans-regular': require('../../assets/fonts/Comic-Sans-MS.ttf'),
+                    'comic-sans': require('../../assets/fonts/Comic-Sans-MS.ttf'),
                     'comic-sans-bold': require('../../assets/fonts/Comic-Sans-MS-Bold.ttf'),
                 });
 
