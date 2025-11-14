@@ -1,6 +1,6 @@
 import { loadAsync } from "expo-font";
 import { useEffect, useState } from "react";
-import { useAuthStore } from "../../../shared/stores/auth-store";
+import { useAuthStore } from "../../shared/stores/auth-store";
 import { ContentState } from "../helpers/types";
 
 export default function usePrepare() {
@@ -14,8 +14,8 @@ export default function usePrepare() {
 
             try {
                 await loadAsync({
-                    'comic-sans-regular': require('../../../assets/fonts/Comic-Sans-MS.ttf'),
-                    'comic-sans-bold': require('../../../assets/fonts/Comic-Sans-MS-Bold.ttf'),
+                    'comic-sans-regular': require('../../assets/fonts/Comic-Sans-MS.ttf'),
+                    'comic-sans-bold': require('../../assets/fonts/Comic-Sans-MS-Bold.ttf'),
                 });
 
                 const hasTokens = await loadTokens();
