@@ -4,7 +4,8 @@ export type UserType = "individual" | "business";
 
 export interface OnboardingStackParamList extends ParamListBase {
     Hello: undefined;
-    Otp: undefined;
-    CustomerType: undefined;
+    Authentication: undefined;
+    Email: undefined;
+    Otp: { email: string };
     Welcome: { userType: UserType };
 }
