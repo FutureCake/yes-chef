@@ -3,20 +3,23 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
 import Button from "../../../../shared/components/buttons";
 import OnboardingStep from "../../components/onboarding-step";
-import { OnboardingStackParamList, UserType } from "../../helpers/types";
+import { useOnboardingStore } from "../../onboarding-store";
+import { OnboardingStackParamList, UserType } from "../../types";
 
 type OnboardingStack = NativeStackNavigationProp<OnboardingStackParamList>;
 
 export default function Hello() {
 
+    const setUserType = useOnboardingStore(s => s.setUserType)
     const nav = useNavigation<OnboardingStack>();
 
     const selectOption = (option: UserType) => {
-        nav.navigate("Authentication", { origin: "new" });
+        setUserType(option);
+        nav.navigate("Authentication");
     }
 
     const login = () => {
-        nav.navigate("Authentication", { origin: "login" });
+        nav.navigate("Authentication");
     }
 
     return (

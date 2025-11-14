@@ -1,22 +1,23 @@
 import { PropsWithChildren } from "react";
-import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
+import { DimensionValue, Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import { KeyboardAvoidingView } from "react-native-keyboard-controller";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export interface OnboardingStepProps extends PropsWithChildren {
     header: string;
     message: string;
+    gap?: DimensionValue;
 }
 
 export default function OnboardingStep(props: OnboardingStepProps) {
 
-    const { header, message, children } = props;
+    const { header, message, gap = 100, children } = props;
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
                 <SafeAreaView edges={["top", "bottom"]} >
-                    <View style={styles.texts}>
+                    <View style={{ marginBottom: gap }}>
                         <Text style={styles.header}>{header}</Text>
                         <Text style={styles.message}>{message}</Text>
                     </View>
@@ -36,15 +37,14 @@ const styles = StyleSheet.create({
         paddingBottom: 16,
         justifyContent: "flex-end"
     },
-    texts: {
-        marginBottom: 100
-    },
     header: {
         fontSize: 36,
-        marginBottom: 14
+        marginBottom: 14,
+        fontFamily: "comic-sans-bold"
     },
     message: {
         fontSize: 20,
+        fontFamily: "comic-sans"
     },
     actions: {
         gap: 12
