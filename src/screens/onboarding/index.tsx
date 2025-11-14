@@ -4,7 +4,7 @@ import Email from "./features/email";
 import Hello from "./features/hello";
 import Otp from "./features/otp";
 import Welcome from "./features/welcome";
-import { OnboardingStackParamList } from "./helpers/types";
+import { OnboardingStackParamList } from "./types";
 
 const Stack = createNativeStackNavigator<OnboardingStackParamList>();
 

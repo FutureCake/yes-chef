@@ -4,7 +4,7 @@ import { useState } from "react";
 import { StyleSheet, TextInput } from "react-native";
 import Button from "../../../../shared/components/buttons";
 import OnboardingStep from "../../components/onboarding-step";
-import { OnboardingStackParamList } from "../../helpers/types";
+import { OnboardingStackParamList } from "../../types";
 
 type OnboardingStack = NativeStackNavigationProp<OnboardingStackParamList>;
 

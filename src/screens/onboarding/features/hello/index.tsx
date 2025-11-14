@@ -3,7 +3,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
 import Button from "../../../../shared/components/buttons";
 import OnboardingStep from "../../components/onboarding-step";
-import { OnboardingStackParamList, UserType } from "../../helpers/types";
+import { OnboardingStackParamList, UserType } from "../../types";
 
 type OnboardingStack = NativeStackNavigationProp<OnboardingStackParamList>;
 
