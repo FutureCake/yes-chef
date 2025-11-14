@@ -1,4 +1,5 @@
 import { loadAsync } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import { useAuthStore } from "../../shared/stores/auth-store";
 import { ContentState } from "../helpers/types";
@@ -13,6 +14,8 @@ export default function usePrepare() {
         const prepare = async () => {
 
             try {
+                await SplashScreen.preventAutoHideAsync();
+
                 await loadAsync({
                     'comic-sans-regular': require('../../assets/fonts/Comic-Sans-MS.ttf'),
                     'comic-sans-bold': require('../../assets/fonts/Comic-Sans-MS-Bold.ttf'),
