@@ -5,17 +5,20 @@ import { StyleSheet, TextInput } from "react-native";
 import { StrongButton } from "../../../../shared/components/buttons/variants";
 import OnboardingStep from "../../components/onboarding-step";
 import { OnboardingStackParamList } from "../../types";
+import useRequestAuth from "./hooks/authenticate";
 
 type OnboardingStack = NativeStackNavigationProp<OnboardingStackParamList>;
 
 export default function Email() {
 
     const nav = useNavigation<OnboardingStack>();
+    const requestAuth = useRequestAuth();
     const [email, setEmail] = useState<string | undefined>();
 
     const next = () => {
         if (!email) return;
 
+        requestAuth(email);
         nav.navigate("Otp", { email: email });
     }
 
