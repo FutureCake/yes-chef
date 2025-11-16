@@ -1,7 +1,7 @@
 import { loadAsync } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
-import { useAuthStore } from "../../shared/stores/auth-store";
+import { useAuthStore } from "../../domain/auth/store";
 import { ContentState } from "../helpers/types";
 
 export default function usePrepare() {

@@ -5,9 +5,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback } from 'react';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import AppError from '../screens/app-error';
-import Content from '../screens/content';
-import Onboarding from '../screens/onboarding';
+import Content from '../features/content';
+import Onboarding from '../features/onboarding';
 import { RootStackParamList } from '../types/navigation';
 import useRoute from './hooks/determine-route';
 import usePrepare from './hooks/prepare';
@@ -38,7 +37,6 @@ export default function App() {
                         <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={route}>
                             <Stack.Screen name="Onboarding" component={Onboarding} />
                             <Stack.Screen name="Content" component={Content} />
-                            <Stack.Screen name="Error" component={AppError} />
                         </Stack.Navigator>
                     </SafeAreaProvider>
                 </NavigationContainer>
