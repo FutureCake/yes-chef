@@ -1,9 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp, NativeStackScreenProps } from "@react-navigation/native-stack";
-import { StrongButton } from "../../../../shared/components/buttons/variants";
-import { RootStackParamList } from "../../../../types/navigation";
-import OnboardingStep from "../../components/onboarding-step";
-import { OnboardingStackParamList } from "../../types";
+import { StrongButton } from "../../../shared/components/buttons/variants";
+import { RootStackParamList } from "../../../types/navigation";
+import OnboardingStep from "../components/onboarding-step";
+import { OnboardingStackParamList } from "../types";
 
 type Props = NativeStackScreenProps<OnboardingStackParamList, "Welcome">;
 type RootStack = NativeStackNavigationProp<RootStackParamList>;

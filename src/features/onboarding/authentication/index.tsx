@@ -1,8 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { LightButton, StrongButton } from "../../../../shared/components/buttons/variants";
-import OnboardingStep from "../../components/onboarding-step";
-import { OnboardingStackParamList } from "../../types";
+import { LightButton, StrongButton } from "../../../shared/components/buttons/variants";
+import OnboardingStep from "../components/onboarding-step";
+import { OnboardingStackParamList } from "../types";
 
 type RootStackNavProp = NativeStackNavigationProp<OnboardingStackParamList>;
 // type Props = NativeStackScreenProps<OnboardingStackParamList, "Authentication">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useAuthStore } from "../../../../../shared/stores/auth-store";
-import { useOnboardingStore } from "../../../onboarding-store";
+import { useAuthStore } from "../../../../shared/stores/auth-store";
+import { useOnboardingStore } from "../../onboarding-store";
 import useDetermineStatus from "./determine-status";
 import useValidateOTP from "./validate-otp";
 
