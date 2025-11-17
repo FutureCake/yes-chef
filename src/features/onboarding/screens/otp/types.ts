@@ -1,4 +1,4 @@
-import { JWTs } from "../../../domain/auth/types";
+import { JWTs } from "../../../../domain/auth/types";
 
 export type AuthType = "login" | "register";
 

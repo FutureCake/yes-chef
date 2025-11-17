@@ -1,10 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
-import Button from "../../../shared/components/buttons";
-import OnboardingStep from "../components/onboarding-step";
-import { useOnboardingStore } from "../onboarding-store";
-import { OnboardingStackParamList, UserType } from "../types";
+import { UserType } from "../../../../domain/user/types";
+import Button from "../../../../shared/components/buttons";
+import OnboardingStep from "../../components/onboarding-step";
+import { useOnboardingStore } from "../../onboarding-store";
+import { OnboardingStackParamList } from "../../types";
 
 type OnboardingStack = NativeStackNavigationProp<OnboardingStackParamList>;
 

@@ -2,9 +2,9 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useState } from "react";
 import { StyleSheet, TextInput } from "react-native";
-import { StrongButton } from "../../../shared/components/buttons/variants";
-import OnboardingStep from "../components/onboarding-step";
-import { OnboardingStackParamList } from "../types";
+import { StrongButton } from "../../../../shared/components/buttons/variants";
+import OnboardingStep from "../../components/onboarding-step";
+import { OnboardingStackParamList } from "../../types";
 import useRequestAuth from "./hooks/authenticate";
 
 type OnboardingStack = NativeStackNavigationProp<OnboardingStackParamList>;
