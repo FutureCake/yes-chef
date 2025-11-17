@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { useAuthStore } from "../../../../domain/auth/store";
+import useGetUser from "../../../../domain/user/hooks/get-user";
+import useUpdateUser from "../../../../domain/user/hooks/update-user";
+import { useUserStore } from "../../../../domain/user/store";
+import { UserAccount } from "../../../../domain/user/types";
 import { useOnboardingStore } from "../../onboarding-store";
 import useDetermineStatus from "./determine-status";
 import useValidateOTP from "./validate-otp";
@@ -47,7 +51,7 @@ export default function useValidateAuthentication(email: string) {
     useEffect(() => {
 
         if (authType === "register") {
-            updateUser.mutate({ name, email, businessOwner });
+            updateUser.mutate({ userType });
         }
 
     }, [authType]);

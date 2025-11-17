@@ -1,10 +1,6 @@
 import { create } from "zustand";
 import { getAuthenticationTokens, removeAuthenticationTokens, setAuthenticationTokens } from "../../libs/keychain";
-
-export interface JWTs {
-    access: string;
-    refresh: string;
-}
+import { JWTs } from "./types";
 
 export interface JWTStore {
     tokens: JWTs | null;
