@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Authentication from "./authentication";
-import Email from "./email";
-import Hello from "./hello";
-import Otp from "./otp";
+import Authentication from "./screens/authentication";
+import Email from "./screens/email";
+import Hello from "./screens/hello";
+import Otp from "./screens/otp";
+import Welcome from "./screens/welcome";
 import { OnboardingStackParamList } from "./types";
-import Welcome from "./welcome";
 
 const Stack = createNativeStackNavigator<OnboardingStackParamList>();
 
